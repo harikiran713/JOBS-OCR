@@ -1,0 +1,29 @@
+{
+  "_comment": "Manually verified ground truth for the synthetic test fixtures (tests/fixtures/make_fixtures.py). Not real manuals. Every schedule row is a job, including rows without an interval or without a procedure (flagged for review).",
+  "jobs": [
+    {"title": "Fuel valve overhaul", "document": "main_engine_manual.pdf", "schedule_page": 4, "frequency_type": "operating_hours", "frequency_value": 3000,
+     "procedure": {"document": "main_engine_manual.pdf", "start_page": 40, "end_page": 41}, "long_description_contains": ["WARNING", "180 Nm", "120 Nm", "0.015 mm", "909-T1", "CAUTION"]},
+    {"title": "Fuel valve pressure test", "document": "main_engine_manual.pdf", "schedule_page": 4, "frequency_type": "operating_hours", "frequency_value": 1500,
+     "procedure": {"document": "main_engine_manual.pdf", "start_page": 42, "end_page": 42}, "long_description_contains": ["350 bar"]},
+    {"title": "Crosshead bearing check bearing clearance", "document": "main_engine_manual.pdf", "schedule_page": 4, "frequency_type": "operating_hours", "frequency_value": 8000,
+     "procedure": {"document": "main_engine_manual.pdf", "start_page": 68, "end_page": 70}, "long_description_contains": ["DANGER", "0.50 mm"]},
+    {"title": "Starting air valve inspect and clean", "document": "main_engine_manual.pdf", "schedule_page": 4, "frequency_type": "calendar", "frequency_value": 6,
+     "procedure": {"document": "main_engine_manual.pdf", "start_page": 77, "end_page": 77}, "long_description_contains": ["90 Nm"]},
+    {"title": "Lub oil filter replace filter element", "document": "main_engine_manual.pdf", "frequency_type": "condition", "frequency_value": null, "procedure": null},
+    {"title": "Clean turbocharger air filter", "document": "aux_boiler_burner_manual.pdf", "frequency_type": "hours_unqualified", "frequency_value": 500,
+     "procedure": {"document": "main_engine_manual.pdf", "start_page": 78, "end_page": 78}, "long_description_contains": ["40 °C"]},
+    {"title": "Check turbocharger vibration", "document": "aux_boiler_burner_manual.pdf", "frequency_type": "calendar", "frequency_value": 1, "procedure": null},
+    {"title": "Inspect turbine blades", "document": "aux_boiler_burner_manual.pdf", "frequency_type": "hours_unqualified", "frequency_value": 3000, "procedure": null},
+    {"title": "General cleaning of the burner and air register", "document": "aux_boiler_burner_manual.pdf", "frequency_type": "calendar", "frequency_value": 1,
+     "procedure": {"document": "aux_boiler_burner_manual.pdf", "start_page": 9, "end_page": 9}, "long_description_contains": ["CAUTION", "3-4 mm"]},
+    {"title": "Check ignition electrodes", "document": "aux_boiler_burner_manual.pdf", "frequency_type": "calendar", "frequency_value": 1,
+     "procedure": {"document": "aux_boiler_burner_manual.pdf", "start_page": 9, "end_page": 9}},
+    {"title": "Replace fuel oil filter cartridge", "document": "aux_boiler_burner_manual.pdf", "frequency_type": "calendar", "frequency_value": 3, "procedure": null},
+    {"title": "Flame scanner clean lens", "document": "aux_boiler_burner_manual.pdf", "frequency_type": "calendar", "frequency_value": 1, "procedure": null},
+    {"title": "Clean the separator bowl", "document": "purifier_scanned.pdf", "frequency_type": "operating_hours", "frequency_value": 1000,
+     "procedure": {"document": "purifier_scanned.pdf", "start_page": 2, "end_page": 2}},
+    {"title": "Replace the bowl seal rings", "document": "purifier_scanned.pdf", "frequency_type": "operating_hours", "frequency_value": 4000, "procedure": null},
+    {"title": "Cylinder liner measure liner wear", "document": "main_engine_manual.pdf", "schedule_page": 4, "frequency_type": "event", "frequency_value": null, "procedure": null},
+    {"title": "Exhaust valve overhaul exhaust valve", "document": "main_engine_manual.pdf", "schedule_page": 4, "frequency_type": "unspecified", "frequency_value": null, "procedure": null}
+  ]
+}

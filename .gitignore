@@ -1,0 +1,18 @@
+# Python
+backend/.venv/
+backend/build/
+backend/dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/tests/fixtures/out/
+
+# Node / Electron
+desktop/node_modules/
+desktop/out/
+desktop/release/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/

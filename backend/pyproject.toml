@@ -1,0 +1,31 @@
+[project]
+name = "mmi-backend"
+version = "0.1.0"
+description = "Marine Maintenance Intelligence – local processing engine"
+requires-python = ">=3.12,<3.13"
+# Exact versions used for builds are pinned in requirements.lock.txt
+dependencies = [
+    "fastapi>=0.162,<0.163",
+    "uvicorn[standard]>=0.54,<0.55",
+    "pydantic>=2.14,<3",
+    "sqlalchemy>=2.1,<2.2",
+    "pymupdf>=2.0,<2.1",
+    "openpyxl>=3.1.5,<3.2",
+    "numpy>=2.5,<2.6",
+    "httpx>=0.28,<0.29",
+    "psutil>=7.2,<8",
+    "rapidocr>=3.10,<3.11",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.2,<10", "pyinstaller>=6.16"]
+# Reference PaddlePaddle OCR (large install; RapidOCR runs the same model family on ONNX Runtime by default)
+paddle = ["paddleocr>=3", "paddlepaddle>=3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 130
+target-version = "py312"

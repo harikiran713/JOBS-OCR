@@ -1,0 +1,222 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Components use semantic names only (bg-surface, text-muted,
+   border-line, bg-accent ...) so both themes stay consistent.
+--------------------------------------------------------------------------- */
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --surface-2: #f7f8fa;
+  --surface-3: #eef0f3;
+  --line: #e1e5ea;
+  --line-strong: #cdd3db;
+  --text: #0f1a2a;
+  --muted: #566173;
+  --subtle: #8792a2;
+  --accent: #0e7490;
+  --accent-hover: #0b6079;
+  --accent-soft: #e5f3f6;
+  --accent-text: #0b5f76;
+  --focus: #22a3c4;
+
+  --nav: #0c1524;
+  --nav-2: #131f33;
+  --nav-3: #1b2a42;
+  --nav-line: #1f2d44;
+  --nav-text: #c9d3e0;
+  --nav-muted: #7e8ca2;
+
+  --ok: #1d7a4b;
+  --ok-soft: #e6f4ec;
+  --warn: #9a5b07;
+  --warn-soft: #fbf1e1;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --info: #1d5ea8;
+  --info-soft: #e8f0fb;
+  --human: #6b46c1;
+  --human-soft: #f1ecfb;
+
+  --shadow-sm: 0 1px 2px rgb(15 26 42 / 0.06);
+  --shadow-md: 0 4px 16px rgb(15 26 42 / 0.08), 0 1px 3px rgb(15 26 42 / 0.06);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0b1220;
+  --surface: #111a2b;
+  --surface-2: #142035;
+  --surface-3: #1a2740;
+  --line: #22314a;
+  --line-strong: #2d3e5b;
+  --text: #e5ebf3;
+  --muted: #9aa7ba;
+  --subtle: #6f7d93;
+  --accent: #22a3c4;
+  --accent-hover: #3bb5d4;
+  --accent-soft: #0f2f3b;
+  --accent-text: #67c7df;
+  --focus: #3bb5d4;
+
+  --nav: #080e19;
+  --nav-2: #0e1727;
+  --nav-3: #162238;
+  --nav-line: #18243a;
+
+  --ok: #4cc488;
+  --ok-soft: #10291f;
+  --warn: #e3a64a;
+  --warn-soft: #2d2110;
+  --danger: #f2756a;
+  --danger-soft: #331716;
+  --info: #6ea8f0;
+  --info-soft: #132540;
+  --human: #a98bf0;
+  --human-soft: #221b39;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 6px 20px rgb(0 0 0 / 0.35);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Cascadia Mono', 'Cascadia Code', Consolas, ui-monospace, monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-text: var(--accent-text);
+  --color-focus: var(--focus);
+  --color-nav: var(--nav);
+  --color-nav-2: var(--nav-2);
+  --color-nav-3: var(--nav-3);
+  --color-nav-line: var(--nav-line);
+  --color-nav-text: var(--nav-text);
+  --color-nav-muted: var(--nav-muted);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-human: var(--human);
+  --color-human-soft: var(--human-soft);
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+
+  --text-2xs: 11px;
+  --text-2xs--line-height: 16px;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+  }
+  /* Content areas remain selectable for copying source text */
+  input,
+  textarea,
+  .selectable,
+  [contenteditable] {
+    user-select: text;
+  }
+  *:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 1px;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--subtle);
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes mmi-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-in {
+  animation: mmi-fade-in 140ms ease-out;
+}
+@keyframes mmi-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+.animate-indeterminate {
+  animation: mmi-indeterminate 1.4s ease-in-out infinite;
+}
+
+/* Text-layer overlay for the PDF viewer: transparent, selectable words over the rendered page. */
+.text-layer span {
+  position: absolute;
+  color: transparent;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0 0;
+  line-height: 1;
+}
+.text-layer span::selection {
+  background: rgb(34 163 196 / 0.35);
+}
